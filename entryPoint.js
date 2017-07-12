@@ -3,10 +3,11 @@ var nodeObj = require('./nodeEntity.js');
 
 var getCircuit = new net.Socket();
 var entryPoint = new net.Socket();
-var buffer = [];
 var circuit = [];
 var nodeIp;
 var nodePKey;
+
+var message = "Onion Routing!";
 
 getCircuit.connect(3478, '10.10.100.66');
 
@@ -49,6 +50,7 @@ entryPoint.on('connect', function()
 {
 	console.log('[CONNECTED]');
 	entryPoint.write('$'+circuit[0].pubKey);
+	var onion = createOnion();
 });
 
 entryPoint.on('close', function()
@@ -56,3 +58,13 @@ entryPoint.on('close', function()
 	console.log("[SYSTEM]: Connection closed.");
 	entryPoint.end();
 });
+
+function createOnion()
+{
+	var onionElement = 
+	{
+		hop: 'ip',
+		msg: message
+	};
+	//JSON.parse(decrypted) so you can access the object
+}

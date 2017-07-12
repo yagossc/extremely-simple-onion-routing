@@ -63,7 +63,7 @@ net.createServer(function(socket)
 		if(msg[0] === '$')
 		{
 			keyData = msg.slice(1);
-			console.log("[KEYDATA]: "+keyData);
+//			console.log("[KEYDATA]: "+keyData);
 			newKey.importKey(keyData, 'pkcs8-public-pem');
 //			console.log(newKey);
 	
