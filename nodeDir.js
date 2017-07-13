@@ -1,5 +1,5 @@
 var net = require('net');
-var nodeObj = require('./nodeEntity.js');
+var nodeObj = require('./util/nodeEntity.js');
 var sleep = require('sleep');
 
 var circuitNodes = [];

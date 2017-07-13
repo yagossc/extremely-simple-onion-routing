@@ -1,15 +1,20 @@
 var net = require('net');
-var nodeObj = require('./nodeEntity.js');
-
+var nodeObj = require('./util/nodeEntity.js');
+var NodeRSA = require('node-rsa');
+var onion = require('./util/onionPeel.js');
 var getCircuit = new net.Socket();
 var entryPoint = new net.Socket();
 var circuit = [];
 var nodeIp;
 var nodePKey;
 
+var key = new NodeRSA();
+
 var message = "Onion Routing!";
 
-getCircuit.connect(3478, '10.10.100.66');
+var endPoint = '192.168.25.12';
+
+getCircuit.connect(3478, '192.168.25.173');
 
 getCircuit.on('connect', function()
 {
@@ -43,6 +48,7 @@ getCircuit.on('close', function()
 	{
 		console.log(node.ip + '\n' + node.pubKey + '\n');
 	});
+	var finalNode = 
 	entryPoint.connect(1234, circuit[0].ip);
 });
 
@@ -61,10 +67,14 @@ entryPoint.on('close', function()
 
 function createOnion()
 {
-	var onionElement = 
+	key.importKey(circuit[circuit.length - 1].pubKey, 'pkcs8-public-pem');
+	var encryption = key.encrypt(onion.constructor(endPoint, message), 'base64'); 
+	for(var i = circuit.length - 2; i > -1; i--)
 	{
-		hop: 'ip',
-		msg: message
-	};
+		key.importKey(circuit[i].pubKey, 'pkcs8-public-pem');
+		encryption = key.encrypt(onion.constructor(circuit[i+1].ip, encryption), 'base64');
+	}
+	//Send onion
+	entryPoint.write('%'+encryption);
 	//JSON.parse(decrypted) so you can access the object
 }

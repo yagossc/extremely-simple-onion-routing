@@ -11,13 +11,16 @@ var privateKey = key.exportKey('pkcs8-private-pem');
 var text = "WORKING!";
 
 var client = new net.Socket();
+var bridge = new net.Socket();
 
 var newKey = new NodeRSA();
 var keyData;
 var newKey2 = new NodeRSA();
 newKey2.importKey(privateKey, 'pkcs8-private-pem');
 
-client.connect(3478, '10.10.100.66');
+var dec;
+
+client.connect(3478, '192.168.25.173');
 
 client.on('connect', function()
 {
@@ -60,7 +63,7 @@ net.createServer(function(socket)
 		var msg = data.toString().trim();
 		console.log("[LOGGING SERVER]: " + msg);
 		//Testing if sent key comes back correctly
-		if(msg[0] === '$')
+/*		if(msg[0] === '$')
 		{
 			keyData = msg.slice(1);
 //			console.log("[KEYDATA]: "+keyData);
@@ -72,8 +75,24 @@ net.createServer(function(socket)
 	
 			console.log('\n\n[DECRYPTED]: ' + decrypted);
 		}
-	
+*/
+		//Received Onion
+		if(msg[0] === '%')
+		{
+			var encrypted = msg.slice(1);
+			var decrypted = newKey2.decrypt(encrypted, 'utf8');
+			dec = JSON.parse(decrypted);
+			console.log(dec.ip + ' enc: ' + dec.encryption);
+			bridge.connect(1234, dec.ip);
+		}
 	});
 
 }).listen(1234);
 console.log("Listening at port 1234");
+
+bridge.on('connect', function()
+{
+	console.log('\n\nCONNECTED TO OTHER NODE');
+//	bridge.write('HELLO!');
+	bridge.write('%'+dec.encryption);
+});
