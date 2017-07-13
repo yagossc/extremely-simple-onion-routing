@@ -13,6 +13,13 @@ Introdução Teórica
 
 > Com esta breve explicação, fica fácil perceber algumas falhas de segurança óbvias, como um eavesdropping no ultimo nó da rede, a qual pode ser corrigida através do uso de end-to-end cryptography (SSL, TSL, etc).
 
+> Explicação por esquemático:  
+> Link 1: https://drive.google.com/open?id=0B9b9Nv3HnVaVYkFWZDBNS2laVk0  
+> Link 2: https://drive.google.com/open?id=0B9b9Nv3HnVaVRWdBR0gxTzl4Vk0  
+
+> Implementação assistida:
+> Link 1: https://drive.google.com/open?id=0B9b9Nv3HnVaVdjZGNlVZRnJBNmM  
+
 
 USAGE & CONFIGURATION
 ===================
@@ -49,7 +56,7 @@ Demo:
 
 VM:
 > Link para a VM (ubuntu server com openSSH configurado, configure a interface de rede da VM em modo bridged e faça como no vídeo alterando os ip's)  
-> http://  
+> https://drive.google.com/file/d/0B9b9Nv3HnVaVR1dUcmRHM2d0X0E/view?usp=sharing  
 > Cada vm é apenas um clone da primeira.
 
 TO DO
@@ -65,9 +72,9 @@ TO DO
 
 Bibliografia
 -------------
-> - Onion Routing: https://en.wikipedia.org/wiki/Onion_routing
-
 > - Onion Routing paper: https://www.onion-router.net/Publications/SSP-1997.pdf
+
+> - Onion Routing: https://en.wikipedia.org/wiki/Onion_routing
 
 > - Public-key Cryptography: https://en.wikipedia.org/wiki/Public-key_cryptography
 
