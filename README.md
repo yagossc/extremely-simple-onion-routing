@@ -43,13 +43,13 @@ Execute na ordem:
 > - Execute o entry point: entryPoint.js.
 
 Demo:
-> Link para o vídeo de uma breve Demo:
+> Link para o vídeo de uma breve Demo:  
 > https://drive.google.com/file/d/0B9b9Nv3HnVaVVWFuYnV0ckVtNHM/view?usp=sharing   
 > Aconselho baixar o vídeo ao invés de assistir no player.
 
 VM:
 > Link para a VM (ubuntu server com openSSH configurado, configure a interface de rede da VM em modo bridged e faça como no vídeo alterando os ip's)  
-> http://
+> http://  
 > Cada vm é apenas um clone da primeira.
 
 TO DO
