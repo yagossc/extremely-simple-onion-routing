@@ -43,11 +43,13 @@ Execute na ordem:
 > - Execute o entry point: entryPoint.js.
 
 Demo:
-> Link para o vídeo de uma breve Demo: https://drive.google.com/file/d/0B9b9Nv3HnVaVVWFuYnV0ckVtNHM/view?usp=sharing  
+> Link para o vídeo de uma breve Demo:
+> - https://drive.google.com/file/d/0B9b9Nv3HnVaVVWFuYnV0ckVtNHM/view?usp=sharing  
 > Aconselho baixar o vídeo ao invés de assistir no player.
 
 VM:
-> Link para a VM (ubuntu server com openSSH configurado, configure a interface de rede da VM em modo bridged e faça como no vídeo alterando os ip's);
+> Link para a VM (ubuntu server com openSSH configurado, configure a interface de rede da VM em modo bridged e faça como no vídeo alterando os ip's)
+> - http://
 > Cada vm é apenas um clone da primeira.
 
 TO DO
@@ -63,14 +65,6 @@ TO DO
 
 Bibliografia
 -------------
-> - Github falando sobre conceitos: https://gist.github.com/mildred/b803e48801f9cdd8a4a8
-
-> - Wiki UDP: https://en.wikipedia.org/wiki/User_Datagram_Protocol
-
-> - List of p2p applications: http://p2peducation.pbworks.com/w/page/8897427/FrontPage
-
-> - Wiki Tor: https://en.wikipedia.org/wiki/Tor_(anonymity_network)
-
 > - Onion Routing: https://en.wikipedia.org/wiki/Onion_routing
 
 > - Onion Routing paper: https://www.onion-router.net/Publications/SSP-1997.pdf
@@ -78,6 +72,16 @@ Bibliografia
 > - Public-key Cryptography: https://en.wikipedia.org/wiki/Public-key_cryptography
 
 > - npm node-rsa: https://www.npmjs.com/package/node-rsa
+
+> - Wiki Tor: https://en.wikipedia.org/wiki/Tor_(anonymity_network)
+
+> - Falando sobre p2p: http://www.brynosaurus.com/pub/net/p2pnat/
+
+> - List of p2p applications: http://p2peducation.pbworks.com/w/page/8897427/FrontPage
+
+> - Github falando sobre conceitos: https://gist.github.com/mildred/b803e48801f9cdd8a4a8
+
+> - Wiki UDP: https://en.wikipedia.org/wiki/User_Datagram_Protocol
 
 > Complementar:
 > - Wiki DHT: https://en.wikipedia.org/wiki/Distributed_hash_table
