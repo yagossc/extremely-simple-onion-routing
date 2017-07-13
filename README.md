@@ -37,16 +37,11 @@ Ponto de Entrada:
 > - Na linha 17 do arquivo edite: getCircuit.connect(3478, 'Ip da sua máquina end point');
 
 Execute na ordem:
-> - Execute o *tracker*/*node directory*;
-> - Execute cada um dos nós d circuito;
-> - Execute o end point;
-> - Execute o entry point.
+> - Execute o *tracker*/*node directory* : nodeDir.js;
+> - Execute cada um dos nós d circuito: circuitNode.js (1) & (2);
+> - Execute o end point: endPoint.js;
+> - Execute o entry point: entryPoint.js.
 
-
-> nodeDir.js
-> circuitNode.js (1) & (2)
-> endPoint.js
-> entryPoint.js
 
 TO DO
 ===================
