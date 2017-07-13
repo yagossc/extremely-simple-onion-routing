@@ -1,8 +1,17 @@
-# Extremely Simple Onion Routing implementation
+# Extremely Simple Onion Routing Implementation in Nodejs
 
 Introdução Teórica
 ===================
 > De maneira geral, podemos comparar o funcionamento do Onion Routing com o do Bittorrent, pois da mesma forma faz-se necessário o uso de uma entidade *Tracker* para listar os usuários cadastros na rede de peers, façamos então uma breve listagem do funcionamento do Onion Routing: 
+> - O ponto inicial solicita uma circuito de conexão (no código: entryPoint.js) para chegar a um alvo/end point (no código: endPoint.js);
+> - Os usuários que se disponibilizaram a fazer parte da relay network estarão listados no *tracker* da rede juntamente com uma chave publica de cada nó para o processo de encryption(criptografia);
+> - A aplicação estabelece um circuito de nós na rede e devolve para o solicitante;
+> - A informação vai ser criptografada em camadas, de maneira que, fazendo uso das chaves públicas, cada nó somente revelará a informação sobre o próximo salto na rede;
+> - Após gerada a Onion e estabelecido o circuito, a informação é enviada pela rede;
+
+> Este funcionamento está mais detalhado em: https://www.onion-router.net/Publications/SSP-1997.pdf e https://en.wikipedia.org/wiki/Tor_(anonymity_network)
+
+> Com esta breve explicação, fica fácil perceber algumas falhas de segurança óbvias, como um eavesdropping no ultimo nó da rede, a qual pode ser corrigida através do uso de end-to-end cryptography (SSL, TSL, etc).
 
 
 TO DO
