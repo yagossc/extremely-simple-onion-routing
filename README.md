@@ -17,7 +17,7 @@ Introdução Teórica
 > Link 1: https://drive.google.com/open?id=0B9b9Nv3HnVaVYkFWZDBNS2laVk0  
 > Link 2: https://drive.google.com/open?id=0B9b9Nv3HnVaVRWdBR0gxTzl4Vk0  
 
-> Implementação assistida:
+> Implementação assistida:  
 > Link 1: https://drive.google.com/open?id=0B9b9Nv3HnVaVdjZGNlVZRnJBNmM  
 
 
