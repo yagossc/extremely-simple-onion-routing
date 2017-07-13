@@ -41,6 +41,8 @@ Execute na ordem:
 > - Execute cada um dos nós d circuito;
 > - Execute o end point;
 > - Execute o entry point.
+
+
 > nodeDir.js
 > circuitNode.js (1) & (2)
 > endPoint.js
