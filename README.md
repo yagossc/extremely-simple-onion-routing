@@ -14,12 +14,44 @@ Introdução Teórica
 > Com esta breve explicação, fica fácil perceber algumas falhas de segurança óbvias, como um eavesdropping no ultimo nó da rede, a qual pode ser corrigida através do uso de end-to-end cryptography (SSL, TSL, etc).
 
 
+USAGE & CONFIGURATION
+===================
+> Você precisará de cinco máquinas na mesma rede local para simular o sistema distribuído. No meu caso, usei a minha própria rodando quatro VM's acessíveis por SSH (aconselho o mesmo procedimento);
+> - Por que cinco máquinas?
+> - 1 máquina rodando o *tracker*: nodeDir.js (Node Directory);
+> - 1 máquina como ponto de entrada: entryPoint.js;
+> - 1 máquina como ponto final: endPoint.js;
+> - 2 máquinas como nós do circuito: circuitNode.js.
+
+> Clone o diretório ou copie os arquivos em cada uma;
+
+Servidor/Tracker/Node Directory:
+> A máquina rodando nodeDir.js não precisa de configurações extras.
+
+Nó do circuito:
+> As máquinas rodando circuitNode.js, é necessária a seguinte alterações:
+> - Na linha 23 do arquivo edite: client.connect(3478, 'Ip da sua máquina rodando nodeDir.js');
+
+Ponto de Entrada:
+> A máquina rodando entryPoint.js precisa de uma alteração no IP do endPoint:
+> - Na linha 17 do arquivo edite: getCircuit.connect(3478, 'Ip da sua máquina end point');
+
+Execute na ordem:
+> - Execute o *tracker*/*node directory*;
+> - Execute cada um dos nós d circuito;
+> - Execute o end point;
+> - Execute o entry point.
+> nodeDir.js
+> circuitNode.js (1) & (2)
+> endPoint.js
+> entryPoint.js
+
 TO DO
 ===================
 
-Udp Hole Punching para poder aplicar o projeto fora da rede local;
-Enviar mensagem no sentido inverso da conexão;
-Corrigir pequenos bugs
+> Udp Hole Punching para poder aplicar o projeto fora da rede local;
+> Enviar mensagem no sentido inverso da conexão;
+> Corrigir pequenos bugs
 > Pequenos bugs de funcionamento:
 > - Passagem do circuito adiante para implementação bidirecional do pipe; 
 > - Gerenciamento de nós inativos; 
